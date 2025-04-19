@@ -4,9 +4,15 @@ import { CiTwitter } from "react-icons/ci";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 
-const Footer = () => {
+const Footer = ({className}) => {
+    const resources =["Blogs","Use Cases","Testimonials","Insights","Activity"]
+    const Company =["Home","Explore","Team","About Us","Activity"]
+    const listStyle = `font-poppins font-medium text-[1rem] leading[1.25rem] ${className}`;
+
+
   return (
-    <div className='w-full  bg-slate-40'>
+    <div className='w-full  bg-slate-40 pt-9'>
+        
         <div className='container mx-auto space-y-3  '>
             <div className='md:flex justify-between items-center space-y-3  flex-col-1 md:p-0 p-2 '>
                 <div className='w-[290px]'>
@@ -21,25 +27,23 @@ const Footer = () => {
                     <span className='text-[#253D4E] font-semibold text-[]'>
                         <h3 className='font-poppins font-semibold leading-[1.625rem] text-[1.25rem]'>Company</h3>
                     </span>
-                    <span className='cursor-pointer space-y-1'>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Home</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Explore</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Team</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>About Us</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Activity</li></ul>
-                </span>
+
+                    {Company.map ((resource, index )=>(
+                    <ul key={index} className={listStyle}>
+                        {resource}
+                    </ul>
+                ))}
                 </div>
                 <div className='w-[100px]'>
                     <span className='text-[#253D4E] font-semibold'>
                     <h3 className='font-poppins font-semibold leading-[1.625rem] text-[1.25rem]'>Resources</h3>
                     </span>
-                    <span className='cursor-pointer space-y-1 '>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Blogs</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Use Cases</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Testimonials</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Insights</li></ul>
-                    <ul><li className='font-poppins font-medium text-[1rem] leading[1.25rem]'>Activity</li></ul>
-                </span>
+                    
+                {resources.map ((resource, index )=>(
+                    <ul key={index} className={listStyle}>
+                        {resource}
+                    </ul>
+                ))}
                     
                 </div>
                 <div className='md:w-[400px] '>
